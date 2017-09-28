@@ -22,7 +22,7 @@ public class UserDataQueryTest {
 	private UserBusiness userBusinessFacade;
 	private static Log log = LogFactory.getLog(UserDataQueryTest.class);
 	
-	@Test
+	
 	public void userDataQueryTest(){
 		//loginUser();
 		//loginUserInvalid();
@@ -31,15 +31,17 @@ public class UserDataQueryTest {
 		findAllUsers();
 	}
 	
+	@Test
 	public void loginUser(){
-		String userName = "Amiya";
+		String userName = "Jay";
 		String password = "Passw0rd";
 		
 		Assert.assertTrue(null != userBusinessFacade.loginUser(userName, password));
 	}
 	
+	@Test
 	public void loginUserInvalid(){
-		String userName = "Amiya";
+		String userName = "Jay";
 		String password = "Passw01rd";
 		
 		Assert.assertTrue(null == userBusinessFacade.loginUser(userName, password));

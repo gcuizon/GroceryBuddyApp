@@ -10,11 +10,28 @@
 					 WHERE user.id =:userId]]>
 		</query>
 	</named-query>
-	
+
 	<named-query name="getItemsByUserId">
 		<query>
 			<![CDATA[FROM ItemVO item
 					 WHERE item.user.id =:userId]]>
+		</query>
+	</named-query>
+
+	<named-query name="loginUser">
+		<query>
+			<![CDATA[FROM UserVO user
+					 WHERE user.name =:userName
+					 AND   user.password =:password]]>
+		</query>
+	</named-query>
+
+	<!-- Item related queries -->
+
+	<named-query name="getItemById">
+		<query>
+			<![CDATA[FROM ItemVO item
+					 WHERE item.id =:itemId]]>
 		</query>
 	</named-query>
 

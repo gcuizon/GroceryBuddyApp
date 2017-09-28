@@ -84,7 +84,7 @@ public class UserBusinessImpl extends BusinessType implements UserBusiness {
 		try{
 			userVo = userDao.loginUser(userName, password);
 		}catch(NoResultException nre){
-			log.info("User '" + userName + "' failed to logged in.");
+			log.info("User '" + userName + "' failed to logged in. Invalid account details.");
 			return null;
 		}
 		
