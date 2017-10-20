@@ -9,6 +9,10 @@ import { DashboardContentComponent } from './dashboard/dashboard-content/dashboa
 import { CatItemComponent } from './dashboard/cat-item/cat-item.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { SideMenuService } from './side-menu/side-menu.service';
+import { HttpModule } from "@angular/http";
+import { UserService } from "app/user-account/user.service";
+import { UserClass } from "app/user-account/user";
+import { UserLoginComponent } from './user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +21,17 @@ import { SideMenuService } from './side-menu/side-menu.service';
     DashboardComponent,
     DashboardContentComponent,
     CatItemComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpModule
   ],
-  providers: [SideMenuService],
+  providers: [SideMenuService,
+              UserService,
+              UserClass],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

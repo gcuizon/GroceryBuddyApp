@@ -15,7 +15,7 @@ public class UserAccountMgmtService {
 	private UserBusiness userBusinessFacade;
 
 	@ResponseBody
-    @RequestMapping(value="/services/userLogin", method=RequestMethod.POST, headers="Accept=application/json")
+    @RequestMapping(value="/services/userLogin", method=RequestMethod.GET, headers="Accept=application/json")
 	public UserBO loginUser(@RequestParam(value="userName", defaultValue="Jay") String userName, 
 							@RequestParam(value="password", defaultValue="Passw0rd") String password){
 		return userBusinessFacade.loginUser(userName, password);
