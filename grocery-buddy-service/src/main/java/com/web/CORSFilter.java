@@ -10,6 +10,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
  
 /**
  * Servlet Filter implementation class CORSFilter
@@ -17,7 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 // Enable it for Servlet 3.x implementations
 /* @ WebFilter(asyncSupported = true, urlPatterns = { "/*" }) */
 public class CORSFilter implements Filter {
- 
+	
+	Logger log = Logger.getLogger(CORSFilter.class);
     /**
      * Default constructor.
      */
@@ -37,9 +40,13 @@ public class CORSFilter implements Filter {
      */
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
             throws IOException, ServletException {
+    	
+        log.info("CORSFilter HTTP Request:  " + ((HttpServletRequest)servletRequest).getMethod());
+        log.info("CORSFilter Request params:" + ((HttpServletRequest)servletRequest).getParameterMap());
  
         HttpServletRequest request = (HttpServletRequest) servletRequest;
-        System.out.println("CORSFilter HTTP Request: " + request.getMethod());
+
+        
  
         // Authorize (allow) all domains to consume the content
         ((HttpServletResponse) servletResponse).addHeader("Access-Control-Allow-Origin", "*");
