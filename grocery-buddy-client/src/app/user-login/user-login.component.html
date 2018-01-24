@@ -1,19 +1,29 @@
+<div class="well well-lg">
 
-  <div class="well well-lg">
-    <br/>
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">
-        <span class="glyphicon glyphicon-user"></span>
-      </span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-    </div>
-    <br/>
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">
-        <span class="glyphicon glyphicon-lock"></span>
-      </span>
-      <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-    </div>
-    <br/>
-    <button class="btn btn-primary btn-block">Login</button>
-  </div>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <br/>
+      <div class="container">
+        <div class="jumbotron">
+          <h2 class="text-center">Grocery Buddy v0.1</h2>
+        </div>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">
+          <span class="glyphicon glyphicon-user"></span>
+        </span>
+        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" 
+          ngModel name="username">
+      </div>
+      <br/>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">
+          <span class="glyphicon glyphicon-lock"></span>
+        </span>
+        <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" 
+          ngModel name="password">
+      </div>
+      <br/>
+      <button class="btn btn-primary btn-block" type="submit">Login</button>
+    </form>
+ 
+</div>

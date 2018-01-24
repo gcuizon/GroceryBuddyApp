@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from "app/user-account/user.service";
+import { RequestOptions } from '@angular/http';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.userService.loginUser();
+    // Parameters obj:
+    //this.userService.loginUser();
   }
   
 }
